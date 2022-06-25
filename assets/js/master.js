@@ -178,6 +178,6 @@ gallery.forEach((img) => {
     popup_box.appendChild(popup_img);
 
     //add box to over lay
-    body.appendChild(popup_box);
+    document.body.appendChild(popup_box);
   });
 });

@@ -329,16 +329,6 @@ a.active {
 .img-box {
   position: relative;
 }
-.img-box::after {
-  content: "";
-  background-color: rgb(0 0 0 / 53%);
-  position: absolute;
-  padding: 72px 124px;
-
-  top: 6px;
-  left: 6px;
-}
-
 .gallery img {
   width: 250px;
   padding: 3px;
@@ -351,7 +341,7 @@ a.active {
 .gallery .img-box:hover img {
   opacity: 1;
 }
-/* 
+
 .pover-lay {
   background-color: rgba(0, 0, 0, 0.6);
   position: fixed;
@@ -359,6 +349,21 @@ a.active {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 10000;
-} */
+  z-index: 1000;
+}
 /*  gallery end */
+
+.popup-box {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  z-index: 1001;
+}
+
+.popup-box img {
+  max-width: 100%;
+}
