@@ -170,6 +170,17 @@ gallery.forEach((img) => {
     popup_box.className = "popup-box";
     // create img
 
+    if (img.alt !== null) {
+      //create heading
+
+      let img_heading = document.createElement("h3");
+
+      // create text for the h3
+      let text_img = document.createTextNode(img.alt);
+      img_heading.appendChild(text_img);
+      popup_box.appendChild(img_heading);
+    }
+
     let popup_img = document.createElement("img");
 
     popup_img.src = img.src;
@@ -179,5 +190,25 @@ gallery.forEach((img) => {
 
     //add box to over lay
     document.body.appendChild(popup_box);
+
+    // create the close span
+    let close_btn = document.createElement("span");
+
+    // create the close botn text
+    let close_text = document.createTextNode("X");
+    //appednd text to close btn
+    close_btn.appendChild(close_text);
+    close_btn.className = "close-btn";
+    popup_box.appendChild(close_btn);
   });
+});
+
+// popup close
+document.addEventListener("click", (e) => {
+  if (e.target.className === "close-btn") {
+    //remove curnt popup
+    e.target.parentNode.remove();
+    // remove over lay
+    document.querySelector(".pover-lay").remove();
+  }
 });
